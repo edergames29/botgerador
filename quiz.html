@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link rel="icon" type="imagem/png" href="pequenoIncone.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>quiz</title>
+	<style type="text/css">
+		#tudo{
+			margin: auto;
+			cursor: a;
+		}
+		#div{
+			display: flex;
+			background-color: #ecf0f1;
+			flex: 0 1 390px;
+			max-width: 500px;
+			margin: auto;
+			color: #7f8c8d;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-bottom: 10px;
+		}
+		#div input{
+			display: block;
+			width: 300px;
+			text-align: center;
+			margin-bottom: 4px;
+			background-color: #16a085;
+			color: #d5e5e6;
+			height: 30px;
+			font-size: 15px;
+			cursor: crosshair;
+		}#div input:hover{
+			background-color: #1abc9c;
+			transition: 0.2s;
+			text-shadow: 1px 1px 1px black;
+		}
+		@keyframes anim{
+			0%{
+				transform: scale(0.1);
+				opacity: 0;
+			}
+			100%{
+				background-color: #ecf0f1;
+				opacity: 1;
+			}
+		
+		input:active{
+			background-color: red;
+		}
+		#descubra{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="tudo">
+		<div id="div">
+				<h1 id="descubra" style="text-align: center;" id='descubra'>descubra que animal voce é</h1>
+				<h2  id="perg" style="text-align: center;">?</h2>
+				<section id="desac">
+					<input type="button" id="r1" value="?" onclick="pr(1)">
+					<input type="button" id="r2" value="?" onclick="pr(2)">
+					<input type="button" id="r3" value="?" onclick="pr(3)">
+					<input type="button" id="r4" value="?" onclick="pr(4)">
+				</section>
+			
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+let al = true
+let controle = 0
+let div =document.getElementById('div')
+let pergunta = document.getElementById('perg')
+let r1 = document.getElementById('r1')
+let r2 = document.getElementById('r2')
+let r3 = document.getElementById('r3')
+let r4 = document.getElementById('r4')
+    p1 = [
+      'sua comida preferida?',
+      'sorvete',
+      'salgado',
+      'chocolate',
+      'salada de frutas',
+
+      'qual sua cor preferida?',
+      'verde',
+      'azul',
+      'vermelho',
+      'amarelo',
+
+      'qual seu animal preferido?',
+      'gato',
+      'cahorro',
+      'coelho',
+      'peixe',
+
+      'qual seu tipo de musica?',
+      'rock',
+      'eletronica',
+      'sertanejo',
+      'antiga'
+    ]
+    
+    var tamanho = [0,p1.length/5]
+
+    
+    function pr(p) {
+    	console.log(tamanho[0], tamanho[1])
+    	console.log('ta')
+    	if (al) {
+    		if(tamanho[0] < tamanho[1]){
+    		al = false
+    		animacao()
+    		pergunta.innerHTML=p1[0+controle]
+    		r1.value=p1[1+controle]
+    		r2.value=p1[2+controle]
+    		r3.value=p1[3+controle]
+    		r4.value=p1[4+controle]
+    		
+    		controle +=5
+    		tamanho[0]++
+    		}else if(tamanho[0] >= tamanho[1]){
+    			animacao()
+    			pergunta.innerHTML='TESTE CHEGOU AO FIM'
+    			r1.value='SEM PERGUNTA FIM'
+    			r2.value='SEM PERGUNTA FIM'
+    			r3.value='SEM PERGUNTA FIM'
+    			r4.value='SEM PERGUNTA FIM'
+    			 deletar()
+    		}
+    		
+    	}
+    	
+    	
+    }
+
+    function animacao(){
+    	div.style.cursor='progress'
+    	div.style.animation = "";
+  		setTimeout(() => div.style.animation = "anim 1s linear", 5);
+  		setTimeout(function(){al = true,div.style.cursor='crosshair'},1200)
+    }
+
+    var animalDefinido='nenhum'
+    function deletar(){
+    	div.style.display='block'
+    	document.getElementById('desac').style.display='none'
+    	document.getElementById('descubra').innerHTML='Voce é um <br>'
+    	pergunta.innerHTML='gato'
+    	if (animalDefinido=='nenhum') {
+    		animais=['gato','passaro','leao','tartaruga','lobo','lebre','jaguatirica']
+    		var na = Math.floor(Math.random()*animais.length)
+    		animalDefinido=animais[na]
+    		pergunta.innerHTML=animalDefinido
+    	}
+    }
+
+    pr()
+</script>
+</html>

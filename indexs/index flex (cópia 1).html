@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link rel="icon" type="imagem/png" href="pequenoIncone.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bot Gerador</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+		}
+		body{
+			background-image: url(https://media.istockphoto.com/vectors/white-studio-room-background-spotlight-vector-gradient-photobox-vector-id868640660?k=6&m=868640660&s=612x612&w=0&h=LENhO2KgAfYBrYTMuY5fzZGo-ZeNBT7xtzQZhmVjSQc=) center center no-repeat fixed;
+		}
+		#topper{
+			display: flex;
+			width: calc(100%-5px);
+			background-color: #000a12;
+			margin:auto;
+			padding: 5px;
+			font-family: 'arial';
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		#bgc{
+			margin:auto;
+			padding: 5px;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+
+			max-width: 1300px;
+			justify-content: center;
+		}
+		.post{
+			flex: 0 1 390px;
+			display: inline-block;
+			background-color: red;
+			margin: 5px;
+			box-shadow: 3px 3px 10px #4f5b62;
+
+			font-family: 'Arial';
+			text-align: center;
+
+			
+			/*
+			border-radius:10px;
+
+			border: outset #bdc3c7;
+
+			box-shadow: 3px 3px 10px #4f5b62;
+			*/
+
+		}
+		
+		.post:hover{
+			margin: 3px;
+			border-top: outset 2px #4f5b62;
+			border-left: outset 2px #4f5b62;
+			border-right: outset 2px #4f5b62;
+
+
+		}
+
+		
+		
+		.post h1{
+			padding: 0;
+			text-align: center;
+			margin: 0px;
+			font-family: 'arial';
+			color: #ecf0f1;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			
+			background-color: #151515;
+		}
+		.post h2{
+			text-align: center;
+			color: #bdc3c7;
+			background-color: #000a12;
+			width: 100%;
+			font-size: 100%;
+			transition-duration: 0.2s;
+			height: 30px;
+			mar
+		}
+		.post h2:hover{
+			background-color: #000a12;
+			color: maroon;
+			font-size: 110%;
+			 
+		}
+		.post img{
+			width: 100%;
+			text-align: center;
+			padding: 0px;
+			vertical-align: middle;
+			background-image: linear-gradient(to bottom right, #e6f2ff, #d9d9d9);
+
+		}
+		.post iframe{
+			width: 100%;
+			text-align: center;
+			margin-bottom: 0px;
+			background-image: linear-gradient(to bottom right, #e6f2ff, #d9d9d9);
+
+		}
+
+		#topper ul{
+			list-style: none;
+			font-size: 20px;
+		}
+		#topper ul li{
+			background-color: #000a12;
+			float: left;
+			width: 150px;
+			margin-right: 10px;
+			color: white;
+			padding-top: 5px;
+			text-align: center;
+			transition-duration: 0.1s;
+
+		}
+		/*animacao*/
+		#topper ul li:hover{
+			font-size: 22px;
+		}
+		/*fim*/
+		#topper ul ul{
+			position: absolute;
+		}
+		#topper ul li ul{
+			visibility: hidden;
+			margin-left: 0px;
+		}
+		#topper ul li ul li{
+			border-top: solid 1px #4f5b62; 
+			margin-left: -40px;
+		}
+		#topper ul li:hover ul{
+
+			visibility: visible;
+		}
+		#topper ul ul li{
+		float: none;
+		}
+		#botgeradortexto{
+			font-size: 30px;
+			color: white;
+			font-weight: bold;
+
+		}
+		#botgeradortexto:hover{
+			color: Maroon;
+			transition-duration: 0.3s;
+		}
+		a{
+			color: white;
+			list-style-type: none;
+			background-color: red;		}
+		a:hover{
+			color: Maroon;
+		}
+		a:link{
+			text-decoration:none; 
+		}
+		#caixav{
+			margin-bottom: 0px;
+		}
+		#pe{
+			background-color: #000a12;
+			color: white;
+			width: 100%;
+			padding-top: 6px;
+			padding-bottom: 0px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		@media (min-width: 1300px){
+			@media(min-height: 640px){
+				#pe{
+					background-color: #222;
+					bottom: 0;
+        			position: fixed;
+        			width: 100%;
+        			text-align: center;
+					}
+				}
+			}
+
+		@media (max-width: 560px){
+			#topper{
+				justify-content: space-around;
+			}
+
+			#labeler{
+			float: none;
+			}
+
+
+			#topper ul{
+			border: solid;
+			}
+			#topper ul li{
+				margin-top: 10px;
+				margin-bottom: 10px;
+
+			border: none;
+			width: 90%;
+			margin-right: 0px;
+
+			border: outset #bdc3c7;
+
+			}
+			#topper ul ul{
+			position: static;
+
+			border: none;
+			}
+			#topper ul li ul{
+			visibility: visible;
+			margin-left: 0px;
+
+
+
+			}
+			#topper ul li ul li{
+			margin-left: 0px;
+
+			background-color: unset;
+
+
+			border: none;
+
+			border-top: solid 1px #4f5b62; 
+			}
+
+
+		}
+
+	</style>
+</head>
+<body>
+
+
+<div id="topper">
+
+<span id="botgeradortexto">Bot Gerador</span>
+
+<ul id="labeler">
+
+	<li>Jogos
+		<ul>
+			<li><a href="paginas/forca/forca.html">Forca</a></li>
+			<li><a href="">Memória</a></li>
+		</ul>
+	</li>
+
+	<li>Comunidade
+		<ul>
+			<li><a href="paginas/area/index.php">Login</a></li>
+			<li><a href="paginas/area/sugestao/opniao.php">Comunicar</a></li>
+		</ul>
+	</li>
+</ul>
+
+</div>
+<div id="bgc">
+	<div class="post">
+		<iframe width="100%" height="218px" style="vertical-align: middle;" src="https://www.youtube.com/embed/VIWVfkF2IeI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<a href="https://www.youtube.com/watch?v=VIWVfkF2IeI"><h2>YouTube</h2></a>
+	</div>
+
+	<div class="post">
+		<img src="images/bannergerador.png">
+		<a href=""><h2>Banner Gerador</h2></a>
+	</div>
+
+	<div class="post">
+		<img src="images/forca.png">
+		<a href="paginas/forca/forca.html"><h2>Jogo da forca</h2></a>
+	</div>
+	
+	<div class="post">
+		<img src="images/colored-darkness.png">
+		<a href="paginas/engine/index.html"><h2>Colored Darkness</h2></a>
+	</div>
+
+	<div class="post">
+		<img src="images/memoria.png">
+		<a href="paginas/memoria/memoria.html"><h2>Jogo da Memória</h2></a>
+	</div>
+</div>
+<footer id="pe">
+
+
+
+	<h3 >&#9400;edergames29</h3>
+
+	<div align=center style="margin-left: 10px; margin-right: 10px;"><a href='https://contador.s12.com.br'><img src='https://contador.s12.com.br/img-x7aybBYDADCW4cz5-79.gif' border='0' alt='contador de visitantes'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=x7aybBYDADCW4cz5'></script></div>
+		<script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=2y6YZ705Z7yb7B6w'></script></div>
+
+		<script type="text/javascript" src="https://usuariosonline.s12.com.br/uo-8x3ACZYAD7Z4Yy78-50-0.js"></script><br><a href="https://usuariosonline.s12.com.br/" target="_blank"></a>
+</footer>
+	
+
+
+</body>
+</html>

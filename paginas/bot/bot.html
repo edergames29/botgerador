@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Pequeno bot</title>
+	<style type="text/css">
+		body{
+		background-color:black;
+		color: #ec4d37;
+	}
+		h1{
+			color: #ec4d37;
+		}
+		section{
+			margin: auto;
+			width: 500px;
+			height: 630px;
+			background-color: #1d1b1b;
+			font-family: "Lucida Console", Courier, monospace;
+			
+		}	
+		#memebot{
+			/*border: solid black;*/
+			width: 405px;
+			background-color: #e7eff6;
+			float: left;
+			margin-left:50px; 
+			
+		}
+		#template{
+			width: 405px;
+			height: 160px; /*height 160 e antes tava 477*/
+			background-color: #dddddd ;
+			background-size: 100% 100%;
+			
+			
+		}
+		#source{
+			width: 405px;
+			height: 317px;
+			background-color: #aaaaaa;
+			background-size: 100% 100%;
+		}
+		h1{
+			color: #f9d342;
+			text-align: center;
+		}
+		input{
+			background-color: #374955;
+			font-family: "Lucida Console", Courier, monospace;
+		}
+		input#botao{
+			text-align: center;
+			/*margin-left:225px;*/
+			color: #292826;
+			border: outset #251e3e;
+			background-color: #f9d342;
+      		width:405px;
+			height:60px;
+			margin-left:50px; 
+			font-family: Helvetica, sans-serif;
+			color: black;
+			font-size: 25pt;
+		}
+		img :hover{
+			color: grey;
+		}
+	</style>
+</head>
+<body>
+<a href="../index.html" style="color:white;text-decoration: none;background-color: #151515;padding: 10px;font-family: 'Arial';font-weight: bold;border-radius: 5px;float: right;">Voltar</a>
+	<section>
+		<h1>PEQUENO BOT</h1>
+		<div id="memebot">
+			<div id="template">
+					
+			</div>
+			<div id="source">
+
+			</div>
+			
+		</div>
+			<input id="botao" type="button" value="GERAR" onclick="clicar()">	
+		</div>
+	</section>
+	<br><br><br>
+	
+
+	<!-- 
+	<audio>
+		<source src="musica/musica.mp3" type="audio/mpeg">
+	</audio>
+	<embed src="musica/musica.mp3" autostart="true" loop="true"  >
+	-->
+	<script>
+	var template = document.getElementById('template')
+	var source = document.getElementById('source')
+	var alavanca = false
+	function clicar(){
+		var tempn = Math.floor(Math.random()*31);
+		var sourcn = Math.floor(Math.random()*36);
+			
+		template.style.backgroundImage ='url(template/'+tempn+'.png)'
+		source.style.backgroundImage = 'url(source/'+sourcn+'.png)'
+		if (alavanca == false){
+			//setInterval(clicar, 1000)
+			alavanca = true
+		}
+	}
+
+	</script>
+
+</body>
+</html>

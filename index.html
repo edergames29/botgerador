@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<link rel="icon" type="imagem/png" href="pequenoIncone.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bot Gerador</title>
+	<style type="text/css">
+		:root{
+			--backgroundpadrao:#000a12;
+			--cortextohover:maroon;
+		}
+		*{
+			margin: 0px;
+		}
+		body{
+			background-image: url(https://media.istockphoto.com/vectors/white-studio-room-background-spotlight-vector-gradient-photobox-vector-id868640660?k=6&m=868640660&s=612x612&w=0&h=LENhO2KgAfYBrYTMuY5fzZGo-ZeNBT7xtzQZhmVjSQc=) center center no-repeat fixed;
+		}
+		#topper{
+			display: flex;
+			width: calc(100%-5px);
+			background-color: var(--backgroundpadrao);
+			margin:auto;
+			padding: 5px;
+			font-family: 'arial';
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		#bgc{
+			margin:auto;
+			padding: 5px;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+
+			max-width: 1300px;
+			justify-content: center;
+		}
+		.post{
+			flex: 0 1 390px;
+			margin: 5px;
+			box-shadow: 3px 3px 10px #4f5b62;
+
+			font-family: 'Arial';
+			text-align: center;
+
+			
+			/*
+			border-radius:10px;
+
+			border: outset #bdc3c7;
+
+			box-shadow: 3px 3px 10px #4f5b62;
+			*/
+			 /*re coisas de fora da div*/
+
+
+		}
+		#imgdv{
+
+			overflow: hidden;
+		}
+		
+		.post:hover{
+			margin-top: 3px;
+			margin-left: 3px;
+			margin-right: 3px;
+			border-top: outset 2px #4f5b62;
+			border-left: outset 2px #4f5b62;
+			border-right: outset 2px #4f5b62;
+
+
+		}
+
+		
+		
+		.post h1{
+			padding: 0;
+			text-align: center;
+			margin: 0px;
+			font-family: 'arial';
+			color: #ecf0f1;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			
+			background-color: #151515;
+		}
+		.post h2{
+			text-align: center;
+			color: #bdc3c7;
+			background-color: var(--backgroundpadrao);
+			padding-top: 5px;
+			width: 100%;
+			font-size: 20px;
+			transition-duration: 0.2s;
+			height: 30px;
+		}
+		@keyframes anim{
+			0%{
+				background-color: #000a12;
+				transform: rotate(999deg); 
+			}
+			100%{
+				background-color: white;
+				color: black;
+				transform: rotate(0deg); 
+			}
+		}
+		.post h2:hover{
+			background-color: #000a12;
+			color: var(--cortextohover);
+			font-size: 115%;
+
+
+			animation: anim 1s linear infinite; /*pode ter inifinite no lugar do numero*/
+			animation-direction: alternate; /*loop e voltar  animacao*/
+			transform:translate3d(0px,0px,-30px) 
+			 
+		}
+		.post img{
+			width: 100%;
+			text-align: center;
+			padding: 0px;
+			vertical-align: middle;
+			background-image: linear-gradient(to bottom right, #e6f2ff, #d9d9d9);
+			transition: all 0.3s;
+			max-width: 100%;
+
+		}
+		.post img:hover{/*
+			transform: scale(1.1);
+			transform: rotate(360deg);
+			*/
+			/*transform: rotateY(10deg);*/
+
+		}
+		.videoC{
+			background-image: linear-gradient(to bottom right, #e6f2ff, #d9d9d9);
+			height: 0;
+			position: relative;
+			padding-bottom: 56.5%;
+		}
+		.post iframe{
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+		
+
+		#topper ul{
+			list-style: none;
+			font-size: 20px;
+
+		}
+		#topper ul li{
+			background-color: var(--backgroundpadrao);
+			float: left;
+			width: 150px;
+			margin-right: 10px;
+			color: white;
+			padding-top: 5px;
+			text-align: center;
+			transition-duration: 0.1s;
+
+		}
+		/*animacao*/
+		#topper ul li:hover{
+			font-size: 22px;
+		}
+		/*fim*/
+		#topper ul ul{
+			position: absolute;
+		}
+		#topper ul li ul{
+			visibility: hidden;
+			margin-left: 0px;
+		}
+		#topper ul li ul li{
+			border-top: solid 1px #4f5b62; 
+			margin-left: -40px;
+		}
+		#topper ul li:hover ul{
+
+			visibility: visible;
+		}
+		#topper ul ul li{
+		float: none;
+		}
+		#botgeradortexto{
+			font-size: 30px;
+			color: white;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		#botgeradortexto:hover{
+			color: var(--cortextohover);
+			transition-duration: 0.3s;
+		}
+		a{
+			color: white;
+			list-style-type: none;	}
+		a:hover{
+			color: var(--cortextohover);
+		}
+		a:link{
+			text-decoration:none; 
+		}
+		#caixav{
+			margin-bottom: 0px;
+		}
+		#pe{
+			background-color: var(--backgroundpadrao);
+			color: white;
+			width: 100%;
+			padding-top: 6px;
+			padding-bottom: 0px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+
+		}
+
+		label[for='btnmenu']{
+			padding: 3px;
+			/*background-color: #222;*/
+			color: #fff;
+			font-family: arial;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+			width: 35px;
+			height: 35px;
+			display: none;
+			transition: all 0.3s;
+		}
+		#btnmenu{
+			display: none;
+		}
+		@media (min-width: 1300px){
+			@media(min-height: 640px){
+				#pe{
+					bottom: 0;
+        			position: fixed;
+        			width: 100%;
+        			text-align: center;
+					}
+				}
+			}
+		@media (max-width: 560px){
+			#topper{
+				justify-content: space-around;
+
+			}
+			#botgeradortexto{
+				padding-left: 20px;
+			}
+
+			#labeler{
+			float: none;
+			width: 209px;
+			}
+			/*menu some com botao*/
+			label[for='btnmenu']{
+			color: #fff;
+			font-family: arial;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+			width: 34px;
+			height: 34px;
+			display: block;
+			position: absolute;
+			}
+			#btnmenu:checked ~ #topper ul{
+			opacity: 1;
+			transition:all 1s;
+			transform: scaleY(1);
+			margin-left: 0%;
+			margin-top: 0;
+			}
+			#topper ul{
+			padding: 0px;
+			opacity: 0;
+			transform: scaleY(0);
+			margin-top: -50%;
+			/*background-color: red;
+			display:none;
+			*/
+			display: block;
+			}
+
+			#btnmenu:checked ~ label[for='btnmenu']{
+			transform: rotate(-90deg);
+			}
+			#topper ul li{
+				/*margin-left: -100%;*/
+				margin-top: 10px;
+				margin-bottom: 10px;
+				display: inline-block;
+
+			border: none;
+			width: 90%;
+			margin-right: 0px;
+
+			border: outset #bdc3c7;
+			width: calc(100% - 6px); /*o tamannho menos a borda*/
+			}
+			#topper ul li ul li:hover{
+				background-color: white;
+			}
+			#topper ul li ul li:hover a{
+				color: var(--cortextohover);
+			}
+			#topper ul ul{
+			position: static;
+			}
+			#topper ul li ul{
+			visibility: visible;
+			margin-left: 0px;
+
+					
+
+			}
+			#topper ul li ul li{
+
+			margin-left: 0px;
+
+			background-color: unset;
+
+
+			border: none;
+
+			border-top: solid 1px #4f5b62; 
+			width: 100%;
+
+			padding-top: 4px;
+			padding-bottom: 4px;
+			margin-bottom: 0px;
+			}
+			.post{
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+<body>
+
+<input type="checkbox" id="btnmenu">
+<label for="btnmenu">&#9776;</label>
+<div id="topper">
+<span id="botgeradortexto" unselectable="on">Bot Gerador</span>
+
+<ul id="labeler" >
+<!--
+	<li>Jogos
+		<ul>
+			<li><a href="paginas/forca/forca.html">Forca</a></li>
+			<li><a href="">Memória</a></li>
+		</ul>
+	</li>
+
+
+-->
+	<li>Comunidade
+		<ul>
+			<li><a href="paginas/area/index.php">Login</a></li>
+			<li><a href="paginas/area/sugestao/opniao.php">Comunicar</a></li>
+		</ul>
+	</li>
+</ul>
+
+</div>
+<div id="bgc">
+	<div class="post">
+		
+		<div class="videoC">
+			<iframe width="390px" height="220px" style="vertical-align: middle;" src="https://www.youtube.com/embed/VIWVfkF2IeI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<a href="https://www.youtube.com/watch?v=VIWVfkF2IeI"><h2>YouTube</h2></a>
+	</div>
+
+	<div class="post">
+		<div id="imgdv">
+			<img src="images/bannergerador.png">
+		</div>
+		
+		<a href=""><h2>Banner Gerador</h2></a>
+	</div>
+
+	<div class="post">
+		<div id="imgdv">
+			<img src="images/forca.png">
+		</div>
+		
+		<a href="paginas/forca/forca.html"><h2>Jogo da forca</h2></a>
+	</div>
+	
+	<div class="post">
+		<div id="imgdv">
+			<img src="images/colored-darkness.png">
+		</div>
+		
+		<a href="paginas/engine/index.html"><h2>Colored Darkness</h2></a>
+	</div>
+
+	<div class="post">
+		<div id="imgdv">
+			<img src="images/memoria.png">
+		</div>
+		
+		<a href="paginas/memoria/memoria.html"><h2>Jogo da Memória</h2></a>
+	</div>
+</div>
+<footer id="pe">
+
+
+
+	<h3 >&#9400;edergames29</h3>
+
+	<div align=center style="margin-left: 10px; margin-right: 10px;"><a href='https://contador.s12.com.br'><img src='https://contador.s12.com.br/img-x7aybBYDADCW4cz5-79.gif' border='0' alt='contador de visitantes'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=x7aybBYDADCW4cz5'></script></div>
+		<script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=2y6YZ705Z7yb7B6w'></script></div>
+
+		<script type="text/javascript" src="https://usuariosonline.s12.com.br/uo-8x3ACZYAD7Z4Yy78-50-0.js"></script><br><a href="https://usuariosonline.s12.com.br/" target="_blank"></a>
+</footer>
+	
+
+
+</body>
+<script type="text/javascript">
+	function cor(argument) {
+	var pe = document.getElementById('pe');
+	var topper = document.getElementById('topper');
+	var h2 = document.getElementsByTagName('h2')
+	console.log(h2)
+	setInterval(function(){
+		ale=Math.floor(Math.random()*5)
+		h2 = document.getElementsByTagName('h2')[ale]
+		nA=Math.floor(Math.random()*255) 
+		nB=Math.floor(Math.random()*255) 
+		nC=Math.floor(Math.random()*255) 
+		pe.style.backgroundColor='rgb('+nA+','+nB+','+nC+')'
+		h2.style.backgroundColor='rgb('+nA+','+nB+','+nC+')'
+		topper.style.backgroundColor='rgb('+nA+','+nB+','+nC+')'
+		console.log('executou')
+	},100)
+	}
+</script>
+</html>

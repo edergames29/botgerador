@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+section{
+    width: 120px;
+    height: 170px;
+    border: inset;
+    background-color: red;
+    display: inline-block;
+    margin-left:20px;
+    margin-top: 5px;
+}
+section:hover{
+    border: solid grey;
+}
+#pontos{
+    background-color: #1d1b1b;
+    width: 100%;
+    color: white;
+    font-family: 'Arial';
+    font-size: 20pt;
+    padding: 10px;
+
+}
+.tudopreto{
+    background:url(../images/baseinicial.png);
+}
+.verde{
+    background:url(../images/verde.png);
+}
+#bt{
+    border: none;
+    height: 40px;
+    position: relative;
+}

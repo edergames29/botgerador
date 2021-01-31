@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Debug</title>
+</head>
+	<style type="text/css">
+		#caixa{
+			width: 510px;
+			height: 550px;
+			border: 1px solid black;
+			background-color: grey;
+			text-align: center;
+			font-family:'Arial';
+		}
+		#caixa img{
+			border: 1px solid black;
+			
+			margin-top:5px;
+		}
+		#txt{
+			width: 10%;
+			border: none;
+			height: 50px;
+			font-size: 20pt;
+			text-align: center;
+		}
+		#botao{
+			margin-left: 2%;
+			background-color: green;
+			height: 50px;
+		}
+		p{
+			margin-top: -5px;
+			font-size: 20pt;
+			height: 5px;
+		}
+	</style>
+<body>
+
+<section id="caixa">
+	<img src="images/1.png" id="imagen">
+	<p>Fruta</p>
+	<input type="text" id="txt" maxlength="1" placeholder="?">
+	<input type="button" id="botao" value="Tentar">
+	<p id="result">- - - - -</p>
+</section>
+
+<script type="text/javascript">
+	const res = document.getElementById('result')
+	const bt = document.getElementById('botao')
+	bt.addEventListener('click',clicar);
+
+
+	const palavras = ['banana','melancia','uva','morango']
+
+
+	function sortear (tamanho) {
+		return Math.floor(Math.random()*tamanho)
+	}
+	const palavrasorte=palavras[(sortear(palavras.length))]
+
+	res.innerHTML=palavrasorte
+
+	console.log(sortear(palavras.length))
+	console.log(palavrasorte)
+	
+	let erros=0
+
+	function clicar(){
+		const txt = document.getElementById('txt').value
+		const e = palavrasorte.search(txt)
+		
+			if(e<0){
+			const img =document.getElementById('imagen')
+			erros++
+			erros<5?img.src='images/'+erros+'.png':img.src='images/loser.png'
+			//alert('errado')
+			}else{
+				//alert('certo')
+				const qual = palavrasorte.indexOf(txt)
+				const b = res.innerHTML.match(/[a-z|-]/ig)
+				b[qual]= txt	
+				
+				res.innerHTML=`${b.join('')}`
+			}
+		
+	}
+</script>
+	
+</body>
+</html>

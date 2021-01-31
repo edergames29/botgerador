@@ -1,0 +1,2 @@
+<h3>Nome:maria ducarmo</h3> <p>Texto:melhorar a fluidez</p> <hr><h3>Nome:maria ducarmo</h3> <p>Texto:melhorar a fluidez</p> <hr><h3>Nome:Sinuca</h3> <p>Texto:Sinuca
+</p> <hr>

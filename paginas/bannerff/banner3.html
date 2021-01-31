@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>banner</title>
+	<style type="text/css" id="estilo">
+
+		:root{
+			--posicaoBaixoCentro:900px;
+			--posicaoMeioCentro:500px;
+		}
+		*{
+			margin: 0px;
+		}
+
+		#banner{
+			width: 2048px;
+			height: 1152px;
+			background-size: 100% 100%;
+			position: relative;
+			text-align: center;
+			background-color: red;
+		}
+
+		.nomedocanal{
+			color: white;
+			font-size: 100px;
+			margin-top: var(--posicaoMeioCentro);
+			display: inline-block;
+			font-family: arial;
+
+			text-shadow: 5px 5px 5px black;
+		}
+		#rotate{
+			width: 100%;
+			height: 300px;
+			background-color: black;
+
+			margin-top: 400px;
+			position: absolute;
+			opacity: 0.5;
+			border-radius: 1px;
+		}
+		#like{
+			position: absolute;
+			margin-top: 100px;
+			margin-left: 1800px;
+		}
+		#btn{
+			margin-top: 2000px;
+		}
+		#imagem{
+			position: absolute;
+			width: 2048px;
+			height: 1152px;
+		}
+		#canvasr{
+			width: 500px;
+			height: 500px;
+			border: solid;
+			margin-top: 1000px;
+		}
+		#mostrar{
+			margin-top: 1152px;
+			position: absolute;
+		}
+		#formulario{
+			position: relative;
+		}
+		#txt{
+			position: absolute;
+			width: 2048px;
+			height: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="formulario">
+		<form>
+			<p>foto:</p>
+			<select name="sfoto" id="sfoto"> 
+		    	<option value="0">Wukong</option> 
+		    	<option value="1">Letal</option> 
+		    	<option value="2">Arms</option> 
+			</select>
+			<p>nome:</p>
+			<input type="text" id="snome" placeholder="nome do canal" id="snome">
+			<p>fonte:</p>
+			<select name="sfonte" id="sfonte"> 
+		    	<option value="arial">Arial</option> 
+		   	 	<option value="monospace">Monospace</option> 
+		    </select> 
+		    <p>cor da fonte:</p>
+			<select name="sfontecor" id="sfontecor"> 
+		  		<option value="white">Branca</option> 
+		   	 	<option value="red">Vermelha</option> 
+		   		<option value="green">Verde</option> 
+		   	 	<option value="blue">Azul</option> 
+		  	 	<option value="pink">Rosa</option> 
+		   		<option value="purple">Roxo</option> 
+		   		<option value="SpringGreen">verde Abacate</option>
+		   		<option value="black">Preto</option>
+		    </select>
+		    <p>sombra do nome:</p>
+			<select name="ssombra" id="ssombra"> 
+		  		<option value="5px 5px 5px black">Com Sombra</option> 
+		   		<option value="none">Sem Sombra</option> 
+		    </select>
+		     <p>fundo:</p>
+			<select name="sfaixa" id="sfaixa"> 
+		  		<option value="0.5">Faixa</option> 
+		   		<option value="0.0">Vazio</option> 
+		    </select>
+		      <p>inscreva-se:</p>
+			<select name="sinsc" id="sinsc"> 
+		  		<option value="0">mão</option> 
+		   		<option value="1">mause 1</option> 
+		   		<option value="2">mause 2</option> 
+		   		<option value="3">inscreva-se</option> 
+		    </select>
+
+
+		    <p>visualizar</p>
+			<input type="button" id="prosseguir" value="prosseguir" onclick="img()">
+			<p>baixar</p>
+			<input type="button" id="prosseguir" value="prosseguir" onclick="baixar()">
+		</form>
+	</div>
+
+
+
+	<div id="banner">
+		<!--
+		<img id="imagem" src="https://vs.media/resize?compression=8&quality=65&type=webp&url=http%3A%2F%2Fimg.vs.media%2F157618786345c065cbdf9dc5c7eda6915438b77ae310f5aa49.jpg&width=728">
+	-->
+		<div id="rotate"></div>
+		<div id="txt">
+			<h1 class="nomedocanal" id="nome">EderGames29</h1>
+		</div>
+		
+
+		
+		<img id="like" width="150px" src="https://2.bp.blogspot.com/-1JVHWs2hrFI/Wq2_cjooTlI/AAAAAAAAupA/k1qsKWLHbegrsSUlLqIag8ynONFvXgKFACLcBGAs/s320/INSCREVA-SE%2B%25285%2529.png">
+		
+		
+		<img id="foto" width="2048" height="1152" src="http://freefiremobile-a.akamaihd.net/ffwebsite/images/index/char_wukong.jpg">
+
+	</div>
+	<!--
+<input type="button" value="IMPRIMIR" id="btn" onclick="funcao_pdf()">
+	-->
+
+
+	<div id="mostrar"></div>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+	<script type="text/javascript">
+		//function funcao_pdf(){
+		//	var pegar_dados = document.getElementById('banner').innerHTML;
+		//	var estilo = document.getElementById('estilo').innerHTML;
+		//	var janela = window.open('','','width=800,height=600')
+
+		//	janela.document.write('<html><head>')
+		////	janela.document.write('<title>PDF</title><style>')
+		//	janela.document.write(estilo)
+		//	janela.document.write('</style></head>')
+		//	janela.document.write('<body>')
+		//	janela.document.write(pegar_dados)
+		//	janela.document.write('</body></html>')
+		//	janela.document.close()
+		//	janela.print()
+
+		//console.log(estilo)
+		//}
+		//
+
+		var imgs = ['https://2.bp.blogspot.com/-1JVHWs2hrFI/Wq2_cjooTlI/AAAAAAAAupA/k1qsKWLHbegrsSUlLqIag8ynONFvXgKFACLcBGAs/s320/INSCREVA-SE%2B%25285%2529.png',
+		'http://www.edvaldoeliezer.com.br/wp-content/uploads/2017/01/inscreva-se-bot%C3%A3o.png',
+		'https://vidacomblog.com.br/wp-content/uploads/backup/2017/12/inscreva-se.png',
+		'https://i.pinimg.com/originals/6f/b6/2b/6fb62b2435dcfdfa8b9aa6bb655ec98b.png']
+
+		var fundosimg=['http://freefiremobile-a.akamaihd.net/ffwebsite/images/index/char_wukong.jpg',
+		'http://freefiremobile-a.akamaihd.net/ffwebsite/images/wallpaper/pop/050.jpg',
+		'http://freefiremobile-a.akamaihd.net/ffwebsite/images/wallpaper/pop/070.jpg']
+
+
+		function transformar(){
+			var mostrar = document.getElementById('mostrar')
+			var node = document.getElementById('banner');
+
+			domtoimage.toPng(node)
+		    .then (function (dataUrl) {
+		        var img = new Image();
+		        img.src = dataUrl;
+		        mostrar.appendChild(img); //esse método exibe a imagem na própria pagina
+		    })
+		    .catch(function (error) {
+		        console.error('erro exibido caso falhe', error);
+		    });
+		}
+		
+
+		function img(){
+			//pegar inpults
+			var sfoto = document.getElementById('sfoto')
+			var snome = document.getElementById('snome')
+			var sfonte = document.getElementById('sfonte')
+			var sfontecor = document.getElementById('sfontecor')
+			var ssombra = document.getElementById('ssombra')
+			var sfaixa = document.getElementById('sfaixa')
+			var sinsc = document.getElementById('sinsc')
+			//pegar elementos img
+			var foto = document.getElementById('foto')
+			var nome = document.getElementById('nome')
+			var rotate = document.getElementById('rotate')
+			var maotip = document.getElementById('like')
+			
+			if (snome.value != '') {
+				nome.innerHTML=snome.value
+			}
+
+			foto.src=fundosimg[sfoto.value]
+			nome.style.color=sfontecor.value
+			nome.style.fontFamily=sfonte.value
+			nome.style.textShadow=ssombra.value
+			rotate.style.opacity=sfaixa.value
+			maotip.src=imgs[sinsc.value]
+			console.log('foi')
+		}
+
+		function baixar(){
+			//setTimeout(transformar(),9000)
+			domtoimage.toBlob(document.getElementById('banner'))
+		    .then(function (blob) {
+		        window.saveAs(blob, 'my-node.png');
+   				 });
+		}
+	</script>
+</body>
+</html>

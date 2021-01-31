@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>banner</title>
+	<style type="text/css" id="estilo">
+
+		:root{
+			--posicaoBaixoCentro:900px;
+			--posicaoMeioCentro:500px;
+		}
+		*{
+			margin: 0px;
+		}
+
+		#banner{
+			width: 2048px;
+			height: 1152px;
+			background-image: url('https://vs.media/resize?compression=8&quality=65&type=webp&url=http%3A%2F%2Fimg.vs.media%2F157618786345c065cbdf9dc5c7eda6915438b77ae310f5aa49.jpg&width=728');
+			background-size: 100% 100%;
+			position: absolute;
+		}
+
+		.nomedocanal{
+			color: white;
+			font-size: 100px;
+			margin-top: var(--posicaoMeioCentro);
+			margin-left: 610px;
+			display: inline-block;
+			position: absolute;
+			font-family: arial;
+
+			text-shadow: 5px 5px 5px black;
+		}
+		#rotate{
+			width: 2300px;
+			height: 300px;
+			background-color: black;
+
+			transform: rotate(30deg);
+			margin-left: -200px;
+			margin-top: 400px;
+			position: absolute;
+			opacity: 0.5;
+		}
+		#like{
+			position: absolute;
+			margin-top: 1000px;
+			margin-left: 1900px;
+		}
+		#btn{
+			margin-top: 2000px;
+		}
+	</style>
+</head>
+<body>
+	<div id="banner">
+		<div id="rotate"></div>
+
+		<h1 class="nomedocanal">juninhoplayers</h1>
+
+		<div id="like"> 
+			<img width="100px" src="http://www.pngmart.com/files/10/Thumbs-UP-PNG-Photos.png">
+			mar
+		</div>
+		
+	</div>
+<input type="button" value="IMPRIMIR" id="btn" onclick="funcao_pdf()">
+	<script type="text/javascript">
+		function funcao_pdf(){
+			var pegar_dados = document.getElementById('banner').innerHTML;
+			var estilo = document.getElementById('estilo').innerHTML;
+			var janela = window.open('','','width=800,height=600')
+
+			janela.document.write('<html><head>')
+			janela.document.write('<title>PDF</title><style>')
+			janela.document.write(estilo)
+			janela.document.write('</style></head>')
+			janela.document.write('<body>')
+			janela.document.write(pegar_dados)
+			janela.document.write('</body></html>')
+			janela.document.close()
+			janela.print()
+
+		console.log(estilo)
+		}
+	</script>
+</body>
+</html>
