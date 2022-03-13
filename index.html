@@ -15,7 +15,14 @@
 		*{
 			margin: 0px;
 		}
+		html, body {
+			height: 100%;
+		}
+		
 		body{
+			min-height: calc(100vh - 70px);
+			margin-bottom: 10px;
+			position: relative;
 			background-image: url(https://media.istockphoto.com/vectors/white-studio-room-background-spotlight-vector-gradient-photobox-vector-id868640660?k=6&m=868640660&s=612x612&w=0&h=LENhO2KgAfYBrYTMuY5fzZGo-ZeNBT7xtzQZhmVjSQc=) center center no-repeat fixed;
 		}
 		#topper{
@@ -143,6 +150,7 @@
 			height: 0;
 			position: relative;
 			padding-bottom: 56.5%;
+			
 		}
 		.post iframe{
 			position: absolute;
@@ -150,6 +158,7 @@
 		    left: 0;
 		    width: 100%;
 		    height: 100%;
+			
 		}
 		
 
@@ -214,6 +223,7 @@
 		#caixav{
 			margin-bottom: 0px;
 		}
+		/*
 		#pe{
 			background-color: var(--backgroundpadrao);
 			color: white;
@@ -226,6 +236,16 @@
 			align-items: center;
 			flex-wrap: wrap;
 
+		}
+		*/
+		#pe{
+			padding-top: 6px;
+			height: 50px;
+			text-align: center;
+			background-color: var(--backgroundpadrao);
+			color: white;
+			width: 100%;
+			bottom: 0;
 		}
 
 		label[for='btnmenu']{
@@ -246,6 +266,7 @@
 		}
 		@media (min-width: 1300px){
 			@media(min-height: 640px){
+				
 				#pe{
 					bottom: 0;
         			position: fixed;
@@ -419,21 +440,25 @@
 		<a href="paginas/memoria/memoria.html"><h2>Jogo da Memória</h2></a>
 	</div>
 </div>
-<footer id="pe">
 
 
-
-	<h3 >&#9400;edergames29</h3>
-
-	<div align=center style="margin-left: 10px; margin-right: 10px;"><a href='https://contador.s12.com.br'><img src='https://contador.s12.com.br/img-x7aybBYDADCW4cz5-79.gif' border='0' alt='contador de visitantes'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=x7aybBYDADCW4cz5'></script></div>
-		<script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=2y6YZ705Z7yb7B6w'></script></div>
-
-		<script type="text/javascript" src="https://usuariosonline.s12.com.br/uo-8x3ACZYAD7Z4Yy78-50-0.js"></script><br><a href="https://usuariosonline.s12.com.br/" target="_blank"></a>
-</footer>
 	
 
 
 </body>
+<footer id="pe">
+
+
+
+<h3 >&#9400;edergames29</h3>
+<!---
+
+<div align=center style="margin-left: 10px; margin-right: 10px;"><a href='https://contador.s12.com.br'><img src='https://contador.s12.com.br/img-x7aybBYDADCW4cz5-79.gif' border='0' alt='contador de visitantes'></a><script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=x7aybBYDADCW4cz5'></script></div>
+	<script type='text/javascript' src='https://contador.s12.com.br/ad.js?id=2y6YZ705Z7yb7B6w'></script></div>
+
+	<script type="text/javascript" src="https://usuariosonline.s12.com.br/uo-8x3ACZYAD7Z4Yy78-50-0.js"></script><br><a href="https://usuariosonline.s12.com.br/" target="_blank"></a>
+	-->
+</footer>
 <script type="text/javascript">
 	function cor(argument) {
 	var pe = document.getElementById('pe');
